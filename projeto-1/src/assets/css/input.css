@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer components{
+  .cardItem {
+    @apply w-full bg-white space-y-4 p-6;
+  }
+
+  .cardItem div{
+    @apply flex justify-between
+  }
+
+  .cardItem h2{
+    @apply text-3xl font-bold
+  }
+}

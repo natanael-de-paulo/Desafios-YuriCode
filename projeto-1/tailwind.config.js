@@ -14,6 +14,8 @@ module.exports = {
       emerald: colors.emerald,
       indigo: colors.indigo,
       yellow: colors.yellow,
+      blue: colors.blue,
+      sky: colors.sky,
       AzureRadiant: {
         100: '#00aeff'
       },
