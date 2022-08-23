@@ -1,7 +1,23 @@
 const section = document.querySelector('#dataSection')
-export function showDataOnScreen(data) {
-  data.map(item => {
-    section.innerHTML += `
+const inputSearch = document.querySelector('#inputSearch')
+
+let filters = []
+let arrayFilter = []
+export function setArrayData(data) {
+  arrayFilter = data
+}
+
+export function showDataOnScreen(filters) {
+  let arr = []
+
+  arr = arrayFilter
+
+  if (inputSearch.value != '') {
+    arr = arr.filter(item => cleanString(item.titulo).includes(filters.titulo))
+  }
+
+  let cardsDisplay = arr.map(item => {
+    return `
       <article class="cardItem" id=${item.id}>
         <div>
           <time datetime="10-06-2022">${item.data_publicacao}</time>
@@ -10,7 +26,7 @@ export function showDataOnScreen(data) {
               xmlns="http://www.w3.org/2000/svg"
               class="h-6 w-6"
               fill="none"
-              viewBox="0 0 100% 100%"
+              viewBox="0 0 30 20"
               stroke="#574AE8"
               stroke-width="2"
             >
@@ -30,14 +46,18 @@ export function showDataOnScreen(data) {
       </article>
     `
   })
-}
 
-const inputSearch = document.querySelector('#inputSearch')
+  section.innerHTML = cardsDisplay
+}
 
 inputSearch.addEventListener('input', e => {
   let valueReceived = cleanString(e.target.value)
-
   console.log(valueReceived)
+
+  showDataOnScreen({
+    ...filters,
+    titulo: valueReceived
+  })
 })
 
 function cleanString(value) {
@@ -46,7 +66,3 @@ function cleanString(value) {
     .normalize('NFD')
     .replace(/[\u0300-\u036f]/g, '')
 }
-
-// function filter(data) {
-//   console.log('FF', data)
-// }
