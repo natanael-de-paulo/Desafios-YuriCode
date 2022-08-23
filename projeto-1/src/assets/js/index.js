@@ -1,15 +1,11 @@
-export function viewDatas(data) {
-  const section = document.querySelector('#dataSection')
-  let items = data.items
-  let itemsFilteredForIndex = items.slice(0, 50)
-  let dataObjects = itemsFilteredForIndex
-  console.log(dataObjects)
-  dataObjects.map(item => {
+const section = document.querySelector('#dataSection')
+export function showDataOnScreen(data) {
+  data.map(item => {
     section.innerHTML += `
       <article class="cardItem" id=${item.id}>
         <div>
           <time datetime="10-06-2022">${item.data_publicacao}</time>
-          <button onClick=''>
+          <button aria-label="Butão de favoritar noticia">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               class="h-6 w-6"
@@ -26,11 +22,31 @@ export function viewDatas(data) {
             </svg>
           </button>
         </div>
-        <a href=${item.link}>${item.titulo}</a>
+        <h2>${item.titulo}</h2>
         <p>
          ${item.introducao}
         </p>
+        <a href=${item.link} target="_blank">Notícia completa aqui!</a>
       </article>
-      `
+    `
   })
 }
+
+const inputSearch = document.querySelector('#inputSearch')
+
+inputSearch.addEventListener('input', e => {
+  let valueReceived = cleanString(e.target.value)
+
+  console.log(valueReceived)
+})
+
+function cleanString(value) {
+  return value
+    ?.toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+}
+
+// function filter(data) {
+//   console.log('FF', data)
+// }
