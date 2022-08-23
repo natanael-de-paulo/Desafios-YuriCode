@@ -5,14 +5,22 @@
 
 @layer components{
   .cardItem {
-    @apply w-full bg-white space-y-4 p-6;
+    @apply w-full bg-white space-y-6  p-6 text-base;
   }
 
   .cardItem div{
-    @apply flex justify-between
+    @apply flex justify-between my-3
   }
 
   .cardItem h2{
-    @apply text-3xl font-bold
+    @apply text-xl font-bold 
+  }
+
+  .cardItem p {
+    @apply text-sm
+  }
+
+  .cardItem a{
+    @apply text-sm hover:text-blue-500 inline-block
   }
 }

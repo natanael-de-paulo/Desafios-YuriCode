@@ -4,15 +4,17 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/dist/output.css"" />
-    <title>Document</title>
+    <meta name="description" content="Blog de noticias" />
+    <link rel="preconnect" href="../dist/output.css" as="style" />
+    <link rel="stylesheet" href="../dist/output.css" />
+    <title>Blog</title>
   </head>
-  <body class="box-border h-screen flex flex-col">
+  <body class="box-border h-screen flex flex-col text-base scroll-smooth">
     <header class="bg-gradient-to-r from-AzureRadiant-100 to-CuriousBlue-100">
-      <div class="container m-auto p-6 space-y-8 text-white">
-        <div class="w-full flex justify-between text-xl font-bold">
-          <h1>Logo</h1>
-          <span>Blog</span>
+      <div class="container m-auto p-4 space-y-8 text-white">
+        <div class="w-full flex justify-between text-lg sm:text-xl font-bold">
+          <h1>Codelância - Desafio 1</h1>
+          <strong>blog</strong>
         </div>
         <label
           class="w-full px-5 flex items-center bg-gradient-to-r from-sky-400 to-sky-400 gap-5 rounded-md"
@@ -20,7 +22,7 @@
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
-            viewBox="0 0 100% 100%"
+            viewBox="0 0 30 20"
             stroke="currentColor"
             stroke-width="2"
             class="w-6 h-6"
@@ -36,14 +38,15 @@
             type="text"
             class="w-full bg-transparent placeholder-white outline-none p-2"
             placeholder="Pesquisar no blog"
+            id="inputSearch"
           />
         </label>
       </div>
     </header>
-    <main class="bg-gray-50 p-6 flex-1">
-      <section class="container m-auto space-y-12" id="dataSection">
-        <article class="cardItem">
-          <div>
+    <main class="bg-gray-50 flex-1">
+      <section class="container m-auto p-4 space-y-12" id="dataSection">
+        <!-- <article class="cardItem">
+          <button aria-label="Butão de favoritar noticia">
             <time datetime="10-06-2022">10-31-2020</time>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -59,19 +62,18 @@
                 d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
               />
             </svg>
-          </div>
-          <h2>Titulo enorme</h2>
+          </button>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid
             eveniet, in tempore, distinctio, et eaque error mollitia nesciunt
             explicabo expedita exercitationem assumenda corporis modi voluptate
             quod rerum optio beatae consectetur!
           </p>
-        </article>
+        </article> -->
       </section>
     </main>
 
-    <script src="./assets/js/index.js" type="module"></script>
-    <script src="./assets/js/api/api.js" type="module"></script>
+    <script src="./assets/js/index.js" type="module" async></script>
+    <script src="./assets/js/api/api.js" type="module" async></script>
   </body>
 </html>
