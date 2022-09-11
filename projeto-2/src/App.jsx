@@ -3,6 +3,7 @@ import { Banner } from './components/Banner'
 import { Footer } from './components/Footer'
 
 import './index.css'
+import { Highlights } from './components/Highlights'
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <Header />
       <main>
         <Banner />
+        <Highlights />
       </main>
       <Footer />
     </>

@@ -1,7 +1,9 @@
 export function Footer() {
   return (
     <>
-      <footer>Todos os direitos reservados.</footer>
+      <footer className="text-center bg-black text-white">
+        Todos os direitos reservados.
+      </footer>
     </>
   )
 }
